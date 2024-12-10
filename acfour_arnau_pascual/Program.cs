@@ -15,6 +15,10 @@ namespace acfour_arnau_pascual
             FillNumbers(numbers);
 
             WriteNumbers(numbers);
+
+            OrderNumbers(numbers);
+
+            WriteOrderedNumbers(numbers);
         }
         public static int SetQuantity()
         {
@@ -45,6 +49,32 @@ namespace acfour_arnau_pascual
             for (int i = 0;i < numbers.Length; i++)
             {
                 Console.WriteLine(MsgWriteNumbers, i, numbers[i]);
+            }
+        }
+        public static void OrderNumbers(int[] numbers)
+        {
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    if (numbers[j] > numbers[i])
+                    {
+                        int aux = numbers[j];
+                        numbers[j] = numbers[i];
+                        numbers[i] = aux;
+                    }
+                }
+            }
+        }
+        public static void WriteOrderedNumbers(int[] numbers)
+        {
+            const string MsgOrderedNumbers = "Nombres ordenats";
+
+            Console.WriteLine(MsgOrderedNumbers);
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write(numbers[i] + " ");
             }
         }
         public static int ReadUserInput()
