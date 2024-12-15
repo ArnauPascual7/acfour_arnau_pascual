@@ -39,8 +39,30 @@ namespace acfour_arnau_pascual
             {
                 Console.WriteLine($"{MsgFillNumbers} {i}");
 
-                numbers[i] = ReadUserInput();
+                numbers[i] = NaturalNum();
             }
+        }
+        public static int NaturalNum()
+        {
+            const string MsgNotNaturalNum = "El nombre no és natural, s'ha establit com a 1";
+
+            int num = 0;
+
+            num = ReadUserInput();
+
+            if (CheckIfNatural(num))
+            {
+                return num;
+            }
+            else
+            {
+                Console.WriteLine(MsgNotNaturalNum);
+                return 1;
+            }
+        }
+        public static bool CheckIfNatural(int num)
+        {
+            return num >= 0;
         }
         public static void WriteNumbers(int[] numbers)
         {
