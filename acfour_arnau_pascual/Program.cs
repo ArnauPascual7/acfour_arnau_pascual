@@ -8,7 +8,7 @@ namespace acfour_arnau_pascual
         {
             ProgramCore();
         }
-        public static void ProgramCore()
+        public static void ProgramCore())
         {
             int[] numbers = new int[SetQuantity()];
 
